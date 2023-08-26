@@ -1,0 +1,27 @@
+{
+  "name": "spiderdiagram",
+  "version": "1.0.0",
+  "description": "Spider diagram for Backendless",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "author": "Egil Helland",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "html-webpack-plugin": "^5.5.3",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "babel-loader": "^8.2.5",
+    "chart.js": "^4.3.0",
+    "react-chartjs-2": "^5.2.0"
+  }
+}
