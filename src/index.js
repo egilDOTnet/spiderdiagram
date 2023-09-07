@@ -20,49 +20,74 @@ ChartJS.register(
 );
 
 export default function SpiderDiagramComponent({ component, elRef }) {
-
-  const {classList, display, style, width, height, labels, datasets, minValue, maxValue, stepSize} = component;
+  const {
+    classList,
+    display,
+    style,
+    width,
+    height,
+    labels,
+    datasets,
+    minValue,
+    maxValue,
+    stepSize,
+  } = component;
 
   const styles = { ...style, width, height };
 
-  const data = { 
+  const data = {
     labels: labels,
     datasets: datasets,
-    };
-  
+  };
+
   // Define the chart options
   const options = {
     scale: {
-      z: '1',
+      z: "1",
     },
     scales: {
       r: {
-        ticks: { 
-          beginAtZero: true, 
-          backdropColor: 'rgba(255,255,255,0.7)', 
-          backdropPadding: '6',
-          font: { family: '\'Barlow\', sans-serif', },
+        ticks: {
+          beginAtZero: true,
+          backdropColor: "rgba(255,255,255,0.7)",
+          backdropPadding: "6",
+          font: { family: "'Barlow', sans-serif" },
         },
-        angleLines: { color: 'rgba(0,0,0,0.4)', },
-        pointLabels: { font: { family: '\'Barlow\', sans-serif', size: '16px', weight: '300', }, },
-        grid: { color: 'rgba(0,0,0,0.4)', },
+        angleLines: { color: "rgba(0,0,0,0.4)" },
+        pointLabels: {
+          font: { family: "'Barlow', sans-serif", size: "16px", weight: "300" },
+        },
+        grid: { color: "rgba(0,0,0,0.4)" },
         suggestedMin: minValue,
         suggestedMax: maxValue,
         stepSize: stepSize,
       },
     },
+    layout: {
+      padding: {
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+      },
+    },
     plugins: {
       legend: {
+        position: "top",
+        align: "start",
         labels: {
-          filter: item => item.text !== 'hidden',
-          font: { family: '\'Barlow\', sans-serif', size: '16px', weight: '300', },
+          filter: (item) => item.text !== "hidden",
+          font: { family: "'Barlow', sans-serif", size: "16px", weight: "300" },
           display: true,
-          position: 'top',
-      align: 'end',
+        },
+        layout: {
+          padding: 0,
         },
       },
       tooltip: {
-        bodyFont: { font: { family: '\'Barlow\', sans-serif', size: '16px', weight: '300', }, },
+        bodyFont: {
+          font: { family: "'Barlow', sans-serif", size: "16px", weight: "300" },
+        },
       },
     },
   };
@@ -72,8 +97,8 @@ export default function SpiderDiagramComponent({ component, elRef }) {
   }
 
   return (
-    <div ref={ elRef } style={ styles } className={ classList } >
-     { data.datasets ? <Radar data={ data } options={ options } /> : ""}
+    <div ref={elRef} style={styles} className={classList}>
+      {data.datasets ? <Radar data={data} options={options} /> : ""}
     </div>
   );
-};
+}
