@@ -49,13 +49,14 @@ export default function SpiderDiagramComponent({ component, elRef }) {
       r: {
         ticks: {
           beginAtZero: true,
-          backdropColor: "rgba(255,255,255,0.7)",
+          backdropColor: "rgba(255,255,255,0.8)",
           backdropPadding: "6",
           font: { family: "'Barlow', sans-serif" },
         },
         angleLines: { color: "rgba(0,0,0,0.4)" },
         pointLabels: {
-          font: { family: "'Barlow', sans-serif", size: "16px", weight: "300" },
+          font: { family: "'Barlow', sans-serif", size: "18px", weight: "400" },
+          color: "#262626",
         },
         grid: { color: "rgba(0,0,0,0.4)" },
         suggestedMin: minValue,
@@ -78,6 +79,7 @@ export default function SpiderDiagramComponent({ component, elRef }) {
         labels: {
           filter: (item) => item.text !== "hidden",
           font: { family: "'Barlow', sans-serif", size: "16px", weight: "300" },
+          color: "#262626",
           display: true,
         },
         layout: {
